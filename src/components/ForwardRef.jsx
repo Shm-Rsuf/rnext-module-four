@@ -1,7 +1,10 @@
 import { useRef } from "react";
-import MyInput from "./MyInput";
 
-export default function Form() {
+function MyInput(props) {
+  return <input {...props} />;
+}
+
+export default function ForwardRef() {
   const inputRef = useRef(null);
 
   function handleClick() {
