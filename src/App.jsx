@@ -1,9 +1,10 @@
-import Form from "./components/Form";
+import "./App.css";
+import CatFriends from "./components/CatFriends";
 
 const App = () => {
   return (
-    <div className='flex justify-center items-center mt-20 gap-5'>
-      <Form />
+    <div>
+      <CatFriends />
     </div>
   );
 };
