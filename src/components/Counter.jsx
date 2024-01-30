@@ -1,14 +1,26 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Counter() {
-  let countRef = useRef(0);
-
-  function handleClick() {
-    // This doesn't re-render the component!
-    countRef.current = countRef.current + 1;
-  }
+  const [show, setShow] = useState(true);
+  const ref = useRef(null);
 
   return (
-    <button onClick={handleClick}>You clicked {countRef.current} times</button>
+    <div>
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        Toggle with setState
+      </button>
+      <button
+        onClick={() => {
+          ref.current.remove();
+        }}
+      >
+        Remove from the DOM
+      </button>
+      {show && <p ref={ref}>Hello world</p>}
+    </div>
   );
 }
