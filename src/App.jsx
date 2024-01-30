@@ -1,12 +1,14 @@
-import "./App.css";
-import TodoList from "./components/TodoList";
+import { useState } from "react";
+import ChatRoom from "./components/ChatRoom";
 
-const App = () => {
+export default function App() {
+  const [show, setShow] = useState(true);
   return (
     <div>
-      <TodoList />
+      <button onClick={() => setShow((s) => !s)}>
+        {show ? "Hide" : "Show"}
+      </button>
+      {show && <ChatRoom />}
     </div>
   );
-};
-
-export default App;
+}
