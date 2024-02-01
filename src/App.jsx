@@ -1,12 +1,13 @@
+
 import "./App.css";
-import Counter from "./components/Counter";
 
-const App = () => {
+import Comments from "./components/Comments";
+
+
+export default function App() {
   return (
-    <div>
-      <Counter />
-    </div>
+    <>
+      <Comments postId={"2"} />
+    </>
   );
-};
-
-export default App;
+}
