@@ -15,7 +15,7 @@ const Comments = ({ postId }) => {
     }
 
     getData();
-    //clean up
+    //cleaning up
     return () => {
       ignore = true;
     };
