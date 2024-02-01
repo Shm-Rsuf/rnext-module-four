@@ -1,10 +1,10 @@
 import "./App.css";
-import CatFriends from "./components/CatFriends";
+import Counter from "./components/Counter";
 
 const App = () => {
   return (
     <div>
-      <CatFriends />
+      <Counter />
     </div>
   );
 };
