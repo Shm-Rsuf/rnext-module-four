@@ -1,3 +1,4 @@
+
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -15,3 +16,4 @@ export function createConnection(serverUrl, roomId) {
 export function visitLog(roomId) {
   console.log(`visited room ${roomId}`);
 }
+
