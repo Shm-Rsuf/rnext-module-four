@@ -1,15 +1,19 @@
+
+/* eslint-disable react/prop-types */
 import { useEffect } from "react";
-import { createConnection } from "../utils/chat";
+import { createConnection, visitLog } from "../utils/chat";
 
-export default function ChatRoom() {
+// const serverUrl = "https://localhost:1234";
+export default function ChatRoom({ roomId, serverUrl }) {
   useEffect(() => {
-    const connection = createConnection();
+    const connection = createConnection(serverUrl, roomId);
     connection.connect();
+    return () => connection.disconnect();
+  }, [roomId, serverUrl]);
 
-    //clean up here
-    return () => {
-      connection.disconnect();
-    };
-  }, []);
-  return <h1>Welcome to the chat!</h1>;
+  useEffect(() => {
+    visitLog(roomId);
+  }, [roomId]);
+
+  return <h1>Welcome to the {roomId} room!</h1>;
 }
