@@ -4,6 +4,7 @@ import { createConnection, visitLog } from "../utils/chat";
 
 // const serverUrl = "https://localhost:1234";
 export default function ChatRoom({ roomId, serverUrl }) {
+  console.log(location.pathname);
   useEffect(() => {
     const connection = createConnection(serverUrl, roomId);
     connection.connect();
