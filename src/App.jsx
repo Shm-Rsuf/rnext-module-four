@@ -1,12 +1,15 @@
-import SaveButton from "./components/SaveButton";
-import StatusBar from "./components/StatusBar";
+import { useState } from "react";
+import "./App.css";
+import Hello from "./components/Hello";
 
 const App = () => {
+  const [show, setShow] = useState(false);
   return (
-    <div className='bg-gray-200 pt-10 text-center w-full h-screen'>
-      <SaveButton />
-      <StatusBar />
-    </div>
+    <>
+      <button onClick={() => setShow(!show)}>{show ? "Remove" : "Show"}</button>
+      <hr />
+      {show && <Hello />}
+    </>
   );
 };
 
